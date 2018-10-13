@@ -74,7 +74,6 @@ class GoogleDriveCheckpoint(Callback):
   def save_to_drive(self, filepath):
     # Create & upload a text file.
     gd_name = filepath.replace('.h5', '-{}.h5'.format(self.best))
-    gd_name = "/AVA/output/" + gd_name
     f = self.drive.CreateFile({'title': gd_name})
     f.SetContentFile(filepath)
     f.Upload()
